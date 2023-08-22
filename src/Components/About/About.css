@@ -1,0 +1,174 @@
+/* about css by mistake i written here*/
+.about-container-first-div{
+    display: flex;
+    flex-direction: row;
+    
+    justify-content: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.about1-cont-img{
+    width: 400px;
+    height: 300px;
+    box-shadow: -34px 32px 0px -11px rgba(43,60,171,1);
+}
+.about-container-first-div-content{
+    margin-left: 5%;
+    margin-top: 5%;
+    width: 50%;
+}
+.about-container-first-div-content>h2{
+    font-family: sans-serif;
+    font-size: 1.6rem;
+    line-height: 3rem;
+    font-weight: 600;
+    color: black;
+}
+
+.about-container-first-div-content>p{
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 26px;
+    color: #8A8FB9;
+    text-align: justify;
+
+}
+
+.about-container-first-div-content .about-container-fir-div-cont-btn{
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.1rem;
+    line-height: 26px;
+    color: #FFFFFF;
+
+    height: 44px;
+    background: orange;
+    border-radius: 3px;
+    border: none;
+    margin-top: 5%;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+@media screen and (max-width:910px){
+    .about-container-first-div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .about-container-first-div-content{
+        width: 100%;
+    }
+}
+@media screen and (max-width:430px){
+    .about1-cont-img{
+        width: 270px;
+        height: 200px;
+    }
+}
+
+.know-more-about-us{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.know-more-about-us>h1{
+    font-family: sans-serif;
+    font-size: 2.3rem;
+    
+    color: black;
+    margin-top: 5%;
+    margin-bottom: 1.5%;
+
+}
+
+.know-more-about-us>p{
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+    
+    color: #8A8FB9;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+
+    text-align: justify;
+}
+
+.inactive-reg-successfully{
+    display: none;
+}
+
+
+/* what-store-shop-offers-header css */
+.what-store-shop-offers{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 2%;
+}
+.what-store-shop-offers-header>h1{
+    font-family: sans-serif;
+    font-size: 2.62rem;
+    line-height: 3.06rem;
+    color: black;
+}
+
+
+.what-store-shop-offer-products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top:3%;
+}
+
+.store-shop-products{
+    width: 270px;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #FFFFFF;
+    box-shadow: 0px 8px 40px rgba(49, 32, 138, 0.1);
+}
+.store-shop-products>h2{
+    font-family: 'Josefin Sans';
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    color: black;
+    margin-top: 2%;
+}
+.store-shop-products>p{
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-align: center;
+    color: rgba(26, 11, 91, 0.3);
+    text-align: center;
+    margin-top: 2%;
+}
+
+@media screen and (max-width:610px){
+    .what-store-shop-offers-header>h1{
+        font-size: 1.82rem;
+        line-height: 2.06rem;
+    }
+}

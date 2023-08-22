@@ -1,0 +1,243 @@
+.Navbar-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 6%;
+    padding-right: 6%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 5;
+
+}
+
+.navbar-foodie-logo-img{
+    width: 100px;
+    height: 50px;
+}
+
+.Navbar-container>ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.Navbar-container>ul li{
+    color: #000;
+    font-family: sans-serif;
+    font-size: 1.1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding: 10px 20px;
+}
+
+
+@media screen and (max-width:780px){
+    .Navbar-container>ul{
+        display: none;
+    }
+}
+
+/* Services */
+
+.services-container{
+    margin-top: 7%;
+    margin-bottom: 5%;
+}
+.services-header-homepage{
+    text-align: center;
+
+}
+
+.services-header-homepage>h1{
+    color: var(--tangerine, #F48E28);
+    font-family: sans-serif;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.services-header-homepage>p{
+    color: #000;
+    font-family: sans-serif;
+    font-size: 1.7rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+
+
+.services-con-each-div>h1{
+    color: #000;
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.services-con-each-div>p{
+    color: #a3a1a1;
+    font-family: sans-serif;
+    font-size: 1.1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    
+}
+
+
+.services-con-each-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    
+    border-radius: 10px;
+    border: 1px solid var(--gray, #B6B6B6);
+    background: var(--white, #FFF);
+
+    width: 25%;
+    height: fit-content;
+    padding: 30px;
+    margin-top: 5%;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+    transition-delay: 0.1s;
+}
+.services-con-each-div>img{
+    width:60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.services-container-all-div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.services-con-each-div:hover{
+    border: 1px solid rgba(182, 182, 182, 0.00);
+    background: var(--white, #FFF);
+    box-shadow: 0px 20px 80px 0px rgba(0, 0, 0, 0.15);
+    /* transform: scale(1); */
+    transform: translateY(-20px);
+    transform: translate(1.1);
+    cursor: pointer;
+}
+
+@media screen and (max-width:890px){
+    .services-con-each-div{
+        width: 40%;
+    }
+}
+
+@media screen and (max-width:530px){
+    .services-con-each-div{
+        width: 70%;
+    }
+}
+
+/* how to work container*/
+.how-to-work-container{
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+.how-to-work-con-header{
+    text-align: center;
+}
+.how-to-work-con-header>p{
+    color: var(--tangerine, #F48E28);
+    font-family: sans-serif;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.how-to-work-con-header>h1{
+    color: #000;
+    font-family: sans-serif;
+    font-size: 1.7rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    line-height: 40px;
+}
+
+.how-to-work-each-div{
+    width: 25%;
+    height: fit-content;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.how-to-work-each-div>img{
+    width: 200px;
+    height: fit-content;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.how-to-work-each-div>h1{
+    color: #000;
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+.how-to-work-each-div>p{
+    color: #7e7d7d;
+    font-family: sans-serif;
+    font-size: 1.1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: justify;
+}
+
+.how-to-work-all-divs{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+    margin-top: 2%;
+}
+
+@media screen and (max-width:890px){
+    .how-to-work-each-div{
+        width: 40%;
+    }
+}
+
+@media screen and (max-width:550px){
+    .how-to-work-each-div{
+        width: 70%;
+    }
+}

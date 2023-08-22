@@ -1,0 +1,234 @@
+.product-container{
+    background-color: rgba(229, 231, 235);
+    padding-top: 5%;
+}
+
+.product-con-product-item{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    width: 60%;
+    margin: auto;
+    gap: 30px;
+    padding: 20px;
+}
+
+.product-con-header-img{
+    width: 250px;
+    height: fit-content;
+}
+
+.product-con-first-header-div>h1{
+    text-transform: capitalize;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: rgb(98, 97, 97);
+}
+
+.product-con-first-header-div>p:nth-child(even){
+    margin-top: 5px;
+    margin-bottom:5px;
+    color: gray;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.product-con-first-header-div>p:nth-child(odd){
+    margin-top: 5px;
+    margin-bottom:5px;
+    color: black;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.product-but-and-add-btns{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 10px;
+}
+.product-but-and-add-btns>button{
+    border: none;
+    padding: 10px 20px;
+    background-color:#F48E28;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 20px;
+}
+
+.product-but-and-add-btns>button:hover{
+    background-color:#f58311;
+    cursor: pointer;
+}
+
+@media screen and (max-width:890px){
+    .product-con-product-item{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:620px){
+    .product-con-product-item{
+        width: 1fr;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+    .product-con-header-img{
+        width: 90%;
+        height: fit-content;
+    }
+}
+
+.realted-products-con>h1{
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: sans-serif;
+}
+
+.realted-products-con{
+    margin-left: 6%;
+    margin-right: 6%;
+    margin-top: 7%;
+    margin-bottom: 5%;
+}
+.products-all-con{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-content: center;
+    margin-left: 6%;
+    gap: 20px;
+    margin-right: 6%;
+   
+}
+
+.each-product-card{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-radius: 10px;
+    transform: scale(1);
+    transition: all 0.5s ease;
+    text-align: center;
+    -webkit-box-shadow: 7px 9px 15px -5px rgba(0,0,0,0.29); 
+    box-shadow: 7px 9px 15px -5px rgba(0,0,0,0.29);
+}
+.each-product-card:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.product-con-card-header-div>h1{
+    font-weight: 500;
+    font-size: 1.2rem;
+    font-family:sans-serif;
+}
+
+.product-con-card-header-div>p{
+    color: rgb(170, 170, 170);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 2%;
+    margin-top: 2%;
+}
+
+.product-con-card-header-div>p:nth-child(odd){
+    font-weight: 700;
+    color: black;
+    margin-top: 5px;
+    margin-bottom:5px;
+}
+
+.product-mages{
+    width:100px;
+    height:100px;
+    
+}
+
+.product-card-and-add-btns>button{
+    color: white;
+    background-color: #f58311;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: none;
+    padding: 5px 10px;
+    margin: auto;
+    width: 100%;
+}
+
+.product-con-card-header-div>h1{
+    color: black;
+    font-family: sans-serif;
+    font-weight: 700;
+    margin-bottom: 2%;
+}
+
+@media screen and (max-width:1200px){
+    .products-all-con{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (max-width:900px){
+    .products-all-con{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+       
+    }
+}
+
+@media screen and (max-width:450px){
+    .products-all-con{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* filter images */
+.filter-items-con{
+    display: flex;
+    flex-wrap:wrap ;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 5%;
+    gap: 0.8rem;
+}
+.filter-item-each-img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.filter-items-con-each{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 10px;
+    cursor: pointer;
+    transform: scale(1);
+    transition: all 0.4s ease;
+}
+
+.filter-items-con-each:hover{
+    transform: scale(1.1);
+}
+
+.filter-items-con-each>p{
+    font-weight: 600;
+    color: black;
+}
