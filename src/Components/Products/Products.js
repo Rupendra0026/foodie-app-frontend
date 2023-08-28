@@ -4,20 +4,37 @@ import { data } from '../../Data';
 import { Maincontext } from '../contextstore/Authcontext';
 import { useNavigate } from 'react-router-dom';
 import filterimages from '../../Assets/filterimages.PNG';
+
+
 function Products(){
+    const{productslist}=useContext(Maincontext);
+///idgo bhaya lageysa
+    
+    console.log('productlist',productslist);
     const navigate=useNavigate();
     const[productchg,setproductchg] = useState(data[3]);
     const[filteritem,setfilteritem] = useState('');
-
+    const[moddata,setmoddata]=useState(data);
+    
+    
+    
+    console.log('data2:',moddata)
     function handleproducts(e){
         window.scrollTo({top:0,behavior:'smooth'})
         setproductchg(e);
     }
 
     useEffect(()=>{
-        window.scrollTo({top:0,behavior:'smooth'})
-
-    },[])
+        
+        const modifiedData = productslist.map(product => ({
+            url: product.imgurl,
+            cag: product.product_category,
+            name: product.product_name,
+            price: product.product_price,
+          }));
+          setmoddata(prevData => [...modifiedData,...prevData])
+          window.scrollTo({top:0,behavior:'smooth'})
+    },[productslist])
         // context data
         const {user,status,setCart}=useContext(Maincontext);
     
@@ -36,6 +53,7 @@ function Products(){
                 if(res.status==200){
                     alert(res.msg);
                     setCart(res.cartlist);
+                    navigate('/addtocart');
                 }
                 else{
                     alert(res.msg);
@@ -56,7 +74,7 @@ function Products(){
                     <p>{productchg.cag}</p>
                     <p><span>₹</span> {productchg.price}</p>
                     <div className='product-but-and-add-btns'>
-                    <button>Buy Now</button>
+                    <button onClick={()=>AddtoCart(productchg)}>Buy Now</button>
                     <button onClick={()=>AddtoCart(productchg)}>Add To Cart</button>
                 </div>
                 </div> 
@@ -114,7 +132,7 @@ function Products(){
             <div className='products-all-con'>
             {
                 filteritem===''?
-            data.map((product)=>{
+            moddata.map((product)=>{
                 return(
                     < div className='each-product-card' key={product.id} onClick={()=>handleproducts(product)}>
                     <img src={product.url} alt="src-data-all" className='product-mages' />
@@ -129,7 +147,7 @@ function Products(){
                     </div>
                 )
             })
-        :data.filter((item)=>item.cag===filteritem).map((product)=>{
+        :moddata.filter((item)=>item.cag===filteritem).map((product)=>{
                 return(
                     < div className='each-product-card' key={product.id} onClick={()=>handleproducts(product)}>
                     <img src={product.url} alt="src-data-all" className='product-mages' />

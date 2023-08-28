@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 function Login(){
     const navigate=useNavigate();
-    const {status,setCart,setStatus,check}=useContext(Maincontext);
+    const {status,setCart,setStatus,check,setAdmin,admin}=useContext(Maincontext);
     const[signin,setsignin]=useState(false);
     const[gmail,setGmail]=useState("");
     const[pass,setPass]=useState("");
@@ -31,7 +31,6 @@ function Login(){
                 setsignin(!signin);
                 setStatus(true);
                 setCart(res.cartlist);
-                alert(res.msg);
             }
             alert(res.msg);
         }
@@ -52,13 +51,15 @@ function Login(){
             })
         });
         const res=await login.json();
-        // console.log(res);
+        
        if(res.status==200){
         setStatus(res.user);
         setCart(res.cartlist);
+        setAdmin(res.userdata.user);
         console.log(res.cartlist);
-        navigate('/');
+        
         alert(res.msg);
+        navigate('/');
        }
        else{
         alert(res.msg);

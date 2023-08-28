@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect,useState } from 'react';
 import './Contactus.css';
 
 import contactus1 from '../../Assets/contactus1.PNG';
@@ -14,6 +14,42 @@ import orbitcontact from '../../Assets/contactorbit.PNG';
 import Footer from '../Footer/Footer';
 
 function Contactus(){
+    const[contact,setContact]=useState({
+        name:"",
+        email:"",
+        subject:"",
+        desc:""
+    });
+
+    let name="";
+    let value="";
+    const formhandling=(e)=>{
+        name=e.target.name;
+        value=e.target.value;
+        setContact({...contact,[name]:value});
+    }
+
+    const submitform=async(e)=>{
+        e.preventDefault();
+        const send=await fetch('/contactform',{
+            method:"POST",
+            headers:{
+                "content-type":"application/json"
+            },
+            body:JSON.stringify({
+                contact:contact
+            })
+        });
+
+        const res=await send.json();
+        alert(res.msg);
+        setContact({
+        name:"",
+        email:"",
+        subject:"",
+        desc:""
+        })
+    }
     useEffect(()=>{
         window.scrollTo({top:0,behavior:'smooth'})
     },[]);
@@ -89,15 +125,15 @@ function Contactus(){
              response to all your needs.</p>
             <form>
             <div className='get-in-touch-form-part1'>
-            <input placeholder='Name*' type="text" />
-            <input placeholder='Email*' type='email' />
+            <input placeholder='Name*' type="text" value={contact.name} name='name' onChange={(e)=>formhandling(e)} />
+            <input placeholder='Email*' type='email' value={contact.email} name="email" onChange={(e)=>formhandling(e)}/>
             </div>
             
-            <input placeholder='Subject*' type='text' />
-            <textarea placeholder='description' />
+            <input placeholder='Subject*' type='text' value={contact.subject} name="subject" onChange={(e)=>formhandling(e)}/>
+            <textarea placeholder='description' name="desc" value={contact.desc} onChange={(e)=>formhandling(e)}/>
 
             </form>
-            <button>Send</button>
+            <button onClick={submitform}>Send</button>
         </div>
         <img src={orbitcontact} alt="orbitcontact" className='contactus-oribit-img'/>
         </div>

@@ -10,6 +10,9 @@ import About from './Components/About/About';
 import Login from './Components/Login/Login';
 import Products from './Components/Products/Products';
 import Cartitems from './Components/Cartitems/Cartitems';
+import Addproduct from './Components/Addproduct/Addproduct';
+import Orderedlist from './Components/Orderedlist/Orderedlist';
+import Allorders from './Components/Allorders/Allorders';
 
 function App() {
   return (
@@ -23,6 +26,9 @@ function App() {
             <Route path='/login' element={<Login/>}/>
             <Route path='/products' element={<Products/>}/>
             <Route path='/addtocart' element={<Cartitems/>}/>
+            <Route path='/addproduct' element={<Addproduct/>}/>
+            <Route path='/orderedlist' element={<Orderedlist/>}/>
+            <Route path='/allorders' element={<Allorders/>}/>
           </Routes>
           
         </div>
